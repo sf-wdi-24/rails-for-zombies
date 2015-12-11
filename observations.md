@@ -2,8 +2,23 @@
 
 1.  How would you validate that a password has a length of six characters?
 
+validates length: { minimum: 6 }
+
 2.  How would you create a relationship where one Zombie has many Tweets and that a Tweet belongs to a Zombie?
+
+class Zombie < ActiveRecord::Base
+	has_many :Tweets
+end
+
+class Tweet < ActiveRecord::Base
+	belongs_to :Zombie
+end
 
 3.  What does 'erb' stand for and how is it similar to handlebars?
 
+embedded ruby, templating system (similar to handlebars)
+
 4.  How is using ActiveRecord similar to your experience with MongoDB?  How is it different?
+
+Similar- database that can be edited
+Different- ActiveRecord uses SQL
